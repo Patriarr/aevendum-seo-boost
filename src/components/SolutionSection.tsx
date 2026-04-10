@@ -1,72 +1,32 @@
 import { motion } from 'framer-motion';
-import { Zap, Recycle } from 'lucide-react';
+import { Recycle, Brain, Shield } from 'lucide-react';
 
-const pillars = [
-  {
-    icon: Zap,
-    label: 'ACTIVAR',
-    color: 'text-gold',
-    bgColor: 'gold-gradient',
-    subtitle: 'Protocolos 01 y 04',
-    items: [
-      { title: 'NMN → Energía celular', desc: 'Restaura el NAD+ para reactivar el metabolismo energético.' },
-      { title: 'Resveratrol → Sirtuinas', desc: 'Enciende las proteínas de reparación del ADN.' },
-    ],
-  },
-  {
-    icon: Recycle,
-    label: 'LIMPIAR',
-    color: 'text-accent',
-    bgColor: 'gold-gradient',
-    subtitle: 'Protocolo 02',
-    items: [
-      { title: 'Espermidina → Autofagia', desc: 'Activa la limpieza celular natural para eliminar componentes dañados.' },
-      { title: 'Eliminación de residuos', desc: 'Renueva las células desde dentro, mejorando función y longevidad.' },
-    ],
-  },
+const steps = [
+  { icon: Recycle, label: 'LIMPIAR', protocol: 'Protocolo 02', title: 'Activación de Autofagia', desc: 'Activación de la autofagia para el reciclaje de componentes celulares dañados.' },
+  { icon: Brain, label: 'CALIBRAR', protocol: 'Protocolo 03', title: 'Optimización Cognitiva', desc: 'Optimización de la barrera hematoencefálica para el rendimiento cognitivo.' },
+  { icon: Shield, label: 'PROTEGER', protocol: 'Protocolo 04', title: 'Modulación de Sirtuinas', desc: 'Modulación de sirtuinas para fortalecer la resiliencia biológica.' },
 ];
 
 export const SolutionSection = () => (
-  <section id="solucion" className="py-20 md:py-32 bg-secondary/30">
+  <section className="py-24 md:py-36 bg-secondary/50">
     <div className="container mx-auto px-4">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="text-center mb-16"
-      >
-        <p className="text-xs tracking-[0.3em] uppercase text-gold mb-3">La solución REGEN-CELL</p>
-        <h2 className="font-display text-3xl md:text-5xl font-light">
-          Una estrategia doble:{' '}
-          <span className="gold-text font-medium">activar y limpiar</span>
+      <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
+        <p className="text-xs tracking-[0.3em] uppercase text-primary mb-4 font-body font-medium">La Solución Aevendum</p>
+        <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground leading-tight">
+          El Método <span className="blue-gray-text">Regen-Cell</span>
         </h2>
       </motion.div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-        {pillars.map((pillar, i) => (
-          <motion.div
-            key={pillar.label}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.15 }}
-            className="glass-card p-8 hover-lift"
-          >
-            <div className="flex items-center gap-3 mb-2">
-              <div className={`w-12 h-12 rounded-full flex items-center justify-center ${pillar.bgColor}`}>
-                <pillar.icon className="w-5 h-5 text-primary-foreground" />
-              </div>
-              <span className="font-display text-xl font-semibold tracking-wider">{pillar.label}</span>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        {steps.map((step, i) => (
+          <motion.div key={step.label} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.15 }}
+            className="bg-background rounded-lg p-8 hover-lift border border-border">
+            <div className="w-12 h-12 rounded-full flex items-center justify-center bg-foreground mb-5">
+              <step.icon className="w-5 h-5 text-background" />
             </div>
-            <p className="text-[10px] tracking-[0.2em] uppercase text-gold font-body mb-6">{pillar.subtitle}</p>
-            <div className="space-y-4">
-              {pillar.items.map((item) => (
-                <div key={item.title}>
-                  <h4 className="font-body text-sm font-semibold mb-1 text-foreground">{item.title}</h4>
-                  <p className="text-xs text-muted-foreground leading-relaxed">{item.desc}</p>
-                </div>
-              ))}
-            </div>
+            <span className="text-[10px] font-body tracking-[0.3em] uppercase text-primary font-semibold">{step.protocol}</span>
+            <h3 className="font-display text-xl font-bold text-foreground mt-1 mb-1">{step.label}</h3>
+            <p className="font-display text-sm font-medium text-foreground/70 mb-3">{step.title}</p>
+            <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
           </motion.div>
         ))}
       </div>

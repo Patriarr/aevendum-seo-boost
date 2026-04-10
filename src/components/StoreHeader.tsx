@@ -1,86 +1,52 @@
-import { ShoppingBag, Menu, X } from 'lucide-react';
 import { useState } from 'react';
-import { useStore } from '@/lib/store';
+import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import logoHeader from '@/assets/logo-header.png';
 
 const navLinks = [
-  { label: 'Protocolos', href: '#packs' },
-  { label: 'Molecular Nutrition', href: '#molecular-nutrition' },
-  { label: 'Cellular Lab', href: '#cellular-lab' },
-  { label: 'Ciencia', href: '#science-research' },
+  { label: 'Ciencia', href: '#hero' },
+  { label: 'Protocolos', href: '#cellular-lab' },
+  { label: 'Packs', href: '#packs' },
   { label: 'Contacto', href: '#contacto' },
 ];
 
 export const StoreHeader = () => {
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const { toggleCart, cartCount } = useStore();
-  const count = cartCount();
-
-  const linkClass = "text-[11px] font-body tracking-wide text-muted-foreground hover:text-foreground transition-colors uppercase";
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/30">
-      <div className="container mx-auto px-4 md:px-8 flex items-center justify-between h-16 md:h-20">
-        <a href="#hero" className="flex flex-col items-start justify-center leading-none shrink-0">
-          <img src={logoHeader} alt="Aevendum — Longevidad Premium" className="h-10 md:h-14 w-auto" />
-          <span className="mt-0.5 pl-0.5 text-[6px] md:text-[8px] tracking-[0.3em] uppercase font-body text-muted-foreground">
-            Longevidad Premium
-          </span>
+    <header className="fixed top-0 left-0 right-0 z-40 bg-background/90 backdrop-blur-sm border-b border-border">
+      <div className="container mx-auto px-4 flex items-center justify-between h-16">
+        <a href="#hero" className="flex items-center gap-2">
+          <img src={logoHeader} alt="Aevendum" className="h-8" />
         </a>
-
-        {/* Desktop nav */}
-        <nav className="hidden lg:flex items-center gap-5">
+        <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <a key={link.href} href={link.href} className={linkClass}>{link.label}</a>
+            <a key={link.label} href={link.href} className="text-xs font-body font-medium tracking-wider uppercase text-muted-foreground hover:text-foreground transition-colors">
+              {link.label}
+            </a>
           ))}
         </nav>
-
-        <div className="flex items-center gap-4">
-          <button
-            onClick={toggleCart}
-            className="relative p-2 text-muted-foreground hover:text-foreground transition-colors"
-            aria-label="Abrir carrito"
-          >
-            <ShoppingBag className="w-5 h-5" />
-            {count > 0 && (
-              <span className="absolute -top-0.5 -right-0.5 w-4 h-4 rounded-full gold-gradient text-[10px] font-bold flex items-center justify-center text-primary-foreground">
-                {count}
-              </span>
-            )}
-          </button>
-
-          <button
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden p-2 text-muted-foreground"
-            aria-label="Menú"
-          >
-            {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-          </button>
-        </div>
+        <a href="#contacto" className="hidden md:inline-block text-xs font-body font-semibold tracking-wider uppercase bg-foreground text-background px-5 py-2 rounded-sm hover:bg-foreground/90 transition-colors">
+          Solicitar Info
+        </a>
+        <button onClick={() => setMenuOpen(!menuOpen)} className="md:hidden p-2 text-foreground" aria-label="Menu">
+          {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+        </button>
       </div>
-
-      {/* Mobile nav */}
       <AnimatePresence>
-        {mobileOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-background/95 backdrop-blur-xl border-b border-border/30 overflow-hidden"
-          >
-            <nav className="flex flex-col py-4 px-6 gap-1">
+        {menuOpen && (
+          <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }}
+            className="md:hidden bg-background border-b border-border overflow-hidden">
+            <div className="container mx-auto px-4 py-4 flex flex-col gap-3">
               {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setMobileOpen(false)}
-                  className="text-sm font-body tracking-wide text-muted-foreground hover:text-foreground transition-colors py-2"
-                >
-                  {link.label}
-                </a>
+                <a key={link.label} href={link.href} onClick={() => setMenuOpen(false)}
+                  className="text-sm font-body font-medium text-muted-foreground hover:text-foreground py-2">{link.label}</a>
               ))}
-            </nav>
+              <a href="#contacto" onClick={() => setMenuOpen(false)}
+                className="text-xs font-body font-semibold tracking-wider uppercase bg-foreground text-background px-5 py-3 rounded-sm text-center mt-2">
+                Solicitar Info
+              </a>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
