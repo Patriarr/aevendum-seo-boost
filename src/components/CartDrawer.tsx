@@ -1,9 +1,16 @@
 import { X, Minus, Plus, ShoppingBag } from 'lucide-react';
 import { useStore } from '@/lib/store';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 export const CartDrawer = () => {
   const { cart, isCartOpen, setCartOpen, removeFromCart, updateQuantity, cartTotal } = useStore();
+  const navigate = useNavigate();
+
+  const handleCheckout = () => {
+    setCartOpen(false);
+    navigate('/checkout');
+  };
 
   return (
     <AnimatePresence>
@@ -79,7 +86,10 @@ export const CartDrawer = () => {
                     <span className="text-sm text-muted-foreground">Total</span>
                     <span className="font-display text-2xl font-semibold">{cartTotal().toFixed(2)}€</span>
                   </div>
-                  <button className="w-full gold-gradient py-3 rounded-sm text-sm font-body font-semibold tracking-wider uppercase text-primary-foreground hover:opacity-90 transition-opacity">
+                  <button
+                    onClick={handleCheckout}
+                    className="w-full gold-gradient py-3 rounded-sm text-sm font-body font-semibold tracking-wider uppercase text-primary-foreground hover:opacity-90 transition-opacity"
+                  >
                     Finalizar Compra
                   </button>
                 </div>

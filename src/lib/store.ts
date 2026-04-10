@@ -10,6 +10,8 @@ export interface Product {
   purity: string;
   description: string;
   badge?: string;
+  comingSoon?: boolean;
+  buttonText?: string;
 }
 
 interface CartItem {
