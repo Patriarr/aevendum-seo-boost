@@ -1,124 +1,87 @@
-import productCapsule from '@/assets/product-capsule.jpg';
-import productPowder from '@/assets/product-powder.jpg';
-import productLiquid from '@/assets/product-liquid.jpg';
-import productBottle from '@/assets/product-bottle.jpg';
-import productResveratrol from '@/assets/product-resveratrol.jpg';
-import packLongevityStarter from '@/assets/pack-longevity-starter.jpg';
-import packFemalePerformance from '@/assets/pack-female-performance.jpg';
-import packAevendumPeak from '@/assets/pack-aevendum-peak.jpg';
+import productP02 from '@/assets/product-p02.jpg';
+import productP03 from '@/assets/product-p03.jpg';
+import productP04 from '@/assets/product-p04.jpg';
 import type { Product } from './store';
 
-// ── Cellular Lab (Advanced Molecules) ──
 export const cellularLabProducts: Product[] = [
   {
-    id: 'nmn-uthever',
-    name: 'Protocolo de Restauración Celular [Cód. 01]',
-    subtitle: 'Sustrato Vital NAD+ de Alta Pureza (500 mg)',
-    price: 85.00,
-    image: productCapsule,
-    category: 'Cellular Lab',
-    purity: '99.9%',
-    description: 'La molécula de referencia en biogerontología. Combustible esencial para la reparación del ADN y energía mitocondrial. Tecnología de Cristalización Avanzada.',
-    badge: 'Grado Investigación',
-    buttonText: 'Solicitar Acceso',
-  },
-];
-
-// ── Molecular Nutrition ──
-export const molecularNutritionProducts: Product[] = [
-  {
-    id: 'spermidine-pro',
-    name: 'Sistema de Renovación Molecular [Cód. 02]',
-    subtitle: 'Inductor de Autofagia PRO (Cápsulas de Alta Concentración)',
+    id: 'protocolo-02',
+    name: 'Renovación Molecular',
+    subtitle: 'Inductor de Autofagia PRO.',
     price: 75.00,
-    image: productPowder,
-    category: 'Cellular Renew',
+    image: productP02,
+    category: 'Protocolo 02',
     purity: '99.5%',
-    description: 'Facilita la eliminación de componentes celulares dañados, promoviendo una renovación sistémica integral. El estándar de oro de la ciencia centroeuropea.',
-    badge: 'Autofagia',
-    buttonText: 'Solicitar Acceso',
+    description: 'Inspirado en los procesos de reciclaje celular premiados con el Nobel. Facilita la eliminación de proteínas dañadas, promoviendo una renovación sistémica desde el núcleo.',
+    badge: 'Lanzamiento Inminente',
+    buttonText: 'Solicitar Dossier Técnico',
   },
   {
-    id: 'magnesio-ltreonato',
-    name: 'Complejo de Optimización Cognitiva [Cód. 03]',
-    subtitle: 'Sinfonía Neuro-Directa (Alta Permeabilidad)',
+    id: 'protocolo-03',
+    name: 'Optimización Cognitiva',
+    subtitle: 'Sinfonía Neuro-Directa (Alta Permeabilidad).',
     price: 69.00,
-    image: productLiquid,
-    category: 'Mineral Excellence',
+    image: productP03,
+    category: 'Protocolo 03',
     purity: '99.8%',
-    description: 'Compuesto quelado diseñado para superar la barrera hematoencefálica. Optimiza la claridad mental, memoria de trabajo y arquitectura del sueño profundo.',
-    badge: 'Neuro',
-    buttonText: 'Solicitar Acceso',
+    description: 'Compuesto quelado diseñado para superar la barrera más selectiva del cuerpo: la barrera hematoencefálica. Optimiza la memoria de trabajo y la arquitectura del sueño profundo.',
+    badge: 'Lanzamiento Inminente',
+    buttonText: 'Solicitar Dossier Técnico',
   },
   {
-    id: 'resveratrol',
-    name: 'Modulador de Resiliencia Biológica [Cód. 04]',
-    subtitle: 'Activador de Sirtuinas (Trans-Resveratrol 500 mg)',
+    id: 'protocolo-04',
+    name: 'Resiliencia Biológica',
+    subtitle: 'Modulador de Vías Sirtuinas.',
     price: 65.00,
-    image: productResveratrol,
-    category: 'Anti-Aging',
+    image: productP04,
+    category: 'Protocolo 04',
     purity: '99.5%',
-    description: 'Trans-Resveratrol de alta pureza. El interruptor genético para una vida longeva. Protege el metabolismo y potencia el Protocolo 01.',
-    badge: 'Sirtuinas',
-    buttonText: 'Solicitar Acceso',
+    description: 'El interruptor genético para la defensa metabólica. Un compuesto de alta pureza diseñado para potenciar la longevidad celular y proteger contra el estrés oxidativo.',
+    badge: 'Lanzamiento Inminente',
+    buttonText: 'Solicitar Dossier Técnico',
   },
 ];
 
-// ── Packs (Sinergias) ──
 export const packs: Product[] = [
   {
-    id: 'vitalidad-total',
-    name: 'Protocolo Vitalidad Total',
-    subtitle: 'P.01 + P.04',
-    price: 135.00,
-    image: packLongevityStarter,
-    category: 'Pack Sinergia',
-    purity: '99.9%',
-    description: 'Energía y antienvejecimiento sistémico.',
-    badge: 'Sinergia Probada',
-    buttonText: 'Consultar Disponibilidad Lote 01',
-  },
-  {
     id: 'mente-renovacion',
-    name: 'Protocolo Mente & Renovación',
+    name: 'Mente & Renovación',
     subtitle: 'P.02 + P.03',
     price: 129.00,
-    image: packFemalePerformance,
-    category: 'Pack Cognitivo',
+    image: productP02,
+    category: 'Pack Sinergia',
     purity: '99.5%',
-    description: 'Claridad mental y limpieza celular profunda.',
-    badge: 'Neuro + Autofagia',
-    buttonText: 'Consultar Disponibilidad Lote 01',
+    description: 'Reset Cognitivo: Limpieza celular combinada con nutrición neuronal directa.',
+    badge: 'Sinergia',
+    buttonText: 'Solicitar Información',
   },
   {
-    id: 'molecular-foundation',
-    name: 'Molecular Foundation',
-    subtitle: 'P.01 + P.02 + P.03',
-    price: 195.00,
-    image: packAevendumPeak,
-    category: 'Protocolo Completo',
+    id: 'defensa-equilibrio',
+    name: 'Defensa & Equilibrio',
+    subtitle: 'P.03 + P.04',
+    price: 115.00,
+    image: productP03,
+    category: 'Pack Neuronal',
+    purity: '99.5%',
+    description: 'Soporte Neuronal: Protección de sirtuinas con enfoque en el sistema nervioso.',
+    badge: 'Soporte',
+    buttonText: 'Solicitar Información',
+  },
+  {
+    id: 'essential-trio',
+    name: 'Aevendum Essential Trio',
+    subtitle: 'P.02 + P.03 + P.04',
+    price: 179.00,
+    image: productP04,
+    category: 'Protocolo Integral',
     purity: '99.9%',
-    description: 'El Triángulo de Hierro: Energía, Limpieza y Cognición.',
+    description: 'Protocolo Integral: La base definitiva de la ingeniería biológica de Aevendum.',
     badge: 'Protocolo Completo',
-    buttonText: 'Consultar Disponibilidad Lote 01',
-  },
-  {
-    id: 'aevendum-full',
-    name: 'Aevendum Full Protocol 360º',
-    subtitle: 'P.01 + P.02 + P.03 + P.04',
-    price: 249.00,
-    image: packAevendumPeak,
-    category: 'Protocolo 360º',
-    purity: '99.9%',
-    description: 'El protocolo definitivo. Todas las moléculas esenciales en un solo envío.',
-    badge: 'Protocolo 360º',
-    buttonText: 'Consultar Disponibilidad Lote 01',
+    buttonText: 'Solicitar Información',
   },
 ];
 
-// Backwards-compat aliases
 export const labProducts = cellularLabProducts;
-export const supplementProducts = molecularNutritionProducts;
-
-// Combined for cart compatibility
-export const products: Product[] = [...cellularLabProducts, ...molecularNutritionProducts, ...packs];
+export const supplementProducts = cellularLabProducts;
+export const molecularNutritionProducts = cellularLabProducts;
+export const products: Product[] = [...cellularLabProducts, ...packs];
