@@ -8,7 +8,7 @@ export default {
     container: { center: true, padding: "2rem", screens: { "2xl": "1400px" } },
     extend: {
       fontFamily: {
-        display: ["Cormorant Garamond", "serif"],
+        display: ["DM Sans", "sans-serif"],
         body: ["Inter", "sans-serif"],
       },
       colors: {
@@ -24,7 +24,7 @@ export default {
         accent: { DEFAULT: "hsl(var(--accent))", foreground: "hsl(var(--accent-foreground))" },
         popover: { DEFAULT: "hsl(var(--popover))", foreground: "hsl(var(--popover-foreground))" },
         card: { DEFAULT: "hsl(var(--card))", foreground: "hsl(var(--card-foreground))" },
-        gold: { DEFAULT: "hsl(var(--gold))", light: "hsl(var(--gold-light))", dark: "hsl(var(--gold-dark))" },
+        "blue-gray": { DEFAULT: "hsl(var(--blue-gray))", light: "hsl(var(--blue-gray-light))", dark: "hsl(var(--blue-gray-dark))" },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))", foreground: "hsl(var(--sidebar-foreground))",
           primary: "hsl(var(--sidebar-primary))", "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
