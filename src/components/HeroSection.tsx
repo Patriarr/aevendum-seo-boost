@@ -32,7 +32,7 @@ export const HeroSection = () => (
         className="flex flex-col sm:flex-row gap-3 justify-center mb-10">
         {trustBadges.map((badge) => (
           <div key={badge} className="flex items-center gap-2 text-sm font-body text-foreground/80">
-            <CheckCircle className="w-4 h-4 text-primary shrink-0" /><span>{badge}</span>
+            <CheckCircle className="w-4 h-4 text-gold shrink-0" /><span>{badge}</span>
           </div>
         ))}
       </motion.div>
