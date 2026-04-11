@@ -16,13 +16,13 @@ export const HeroSection = () => (
     </div>
     <div className="relative z-10 container mx-auto px-4 text-center">
       <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
-        className="text-xs tracking-[0.35em] uppercase text-primary mb-5 font-body font-medium">
+        className="text-xs tracking-[0.35em] uppercase text-gold mb-5 font-body font-medium">
         La Vanguardia de Berlín en España · Stock Inmediato
       </motion.p>
       <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
-        className="font-display text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground mb-6">
+        className="font-display text-4xl md:text-6xl lg:text-7xl font-light tracking-tight text-foreground mb-6">
         Protocolos de Longevidad:<br className="hidden md:block" />
-        <span className="blue-gray-text">El Estándar de Excelencia.</span>
+        <span className="gold-text font-medium">El Estándar de Excelencia.</span>
       </motion.h1>
       <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}
         className="font-body text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
@@ -37,7 +37,7 @@ export const HeroSection = () => (
         ))}
       </motion.div>
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.8 }}>
-        <a href="#contacto" className="inline-block bg-foreground text-background px-10 py-4 rounded-sm text-sm font-body font-semibold tracking-wider uppercase hover:bg-foreground/90 transition-colors">
+        <a href="#contacto" className="inline-block gold-gradient text-primary-foreground px-10 py-4 rounded-sm text-sm font-body font-semibold tracking-wider uppercase hover:opacity-90 transition-opacity">
           Explorar Protocolos
         </a>
       </motion.div>
