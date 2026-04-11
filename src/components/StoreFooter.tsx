@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import logoFooter from '@/assets/logo-footer.png';
 
 export const StoreFooter = () => (
-  <footer className="py-16 border-t border-border">
+  <footer className="py-16 border-t border-border/50">
     <div className="container mx-auto px-4">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
         <div>

@@ -11,9 +11,9 @@ export const ProblemSection = () => (
   <section className="py-24 md:py-36">
     <div className="container mx-auto px-4">
       <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
-        <p className="text-xs tracking-[0.3em] uppercase text-primary mb-4 font-body font-medium">El origen del problema</p>
-        <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground leading-tight">
-          El envejecimiento empieza en tus <span className="blue-gray-text">células</span>
+        <p className="text-xs tracking-[0.3em] uppercase text-gold mb-4 font-body font-medium">El origen del problema</p>
+        <h2 className="font-display text-3xl md:text-5xl font-light text-foreground leading-tight">
+          El envejecimiento empieza en tus <span className="gold-text font-medium">células</span>
         </h2>
         <p className="font-body text-base text-muted-foreground max-w-xl mx-auto mt-5 leading-relaxed">
           Con el tiempo, los residuos se acumulan y la resiliencia celular disminuye. Esto se traduce en menor claridad mental, fatiga y un metabolismo ralentizado.
@@ -23,7 +23,7 @@ export const ProblemSection = () => (
         {problems.map((item, i) => (
           <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="text-center p-8">
             <div className="w-14 h-14 mx-auto mb-5 rounded-full flex items-center justify-center bg-secondary">
-              <item.icon className="w-6 h-6 text-primary" />
+              <item.icon className="w-6 h-6 text-gold" />
             </div>
             <h3 className="font-display text-lg font-semibold text-foreground mb-3">{item.title}</h3>
             <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
