@@ -14,7 +14,7 @@ export const StoreHeader = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-40 bg-background/90 backdrop-blur-sm border-b border-border">
+    <header className="fixed top-0 left-0 right-0 z-40 bg-background/80 backdrop-blur-xl border-b border-border/50">
       <div className="container mx-auto px-4 flex items-center justify-between h-16">
         <a href="#hero" className="flex items-center gap-2">
           <img src={logoHeader} alt="Aevendum" className="h-8" />
@@ -26,7 +26,7 @@ export const StoreHeader = () => {
             </a>
           ))}
         </nav>
-        <a href="#contacto" className="hidden md:inline-block text-xs font-body font-semibold tracking-wider uppercase bg-foreground text-background px-5 py-2 rounded-sm hover:bg-foreground/90 transition-colors">
+        <a href="#contacto" className="hidden md:inline-block text-xs font-body font-semibold tracking-wider uppercase gold-gradient text-primary-foreground px-5 py-2 rounded-sm hover:opacity-90 transition-opacity">
           Solicitar Info
         </a>
         <button onClick={() => setMenuOpen(!menuOpen)} className="md:hidden p-2 text-foreground" aria-label="Menu">
@@ -36,14 +36,14 @@ export const StoreHeader = () => {
       <AnimatePresence>
         {menuOpen && (
           <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-background border-b border-border overflow-hidden">
+            className="md:hidden bg-background/95 backdrop-blur-xl border-b border-border/50 overflow-hidden">
             <div className="container mx-auto px-4 py-4 flex flex-col gap-3">
               {navLinks.map((link) => (
                 <a key={link.label} href={link.href} onClick={() => setMenuOpen(false)}
                   className="text-sm font-body font-medium text-muted-foreground hover:text-foreground py-2">{link.label}</a>
               ))}
               <a href="#contacto" onClick={() => setMenuOpen(false)}
-                className="text-xs font-body font-semibold tracking-wider uppercase bg-foreground text-background px-5 py-3 rounded-sm text-center mt-2">
+                className="text-xs font-body font-semibold tracking-wider uppercase gold-gradient text-primary-foreground px-5 py-3 rounded-sm text-center mt-2">
                 Solicitar Info
               </a>
             </div>

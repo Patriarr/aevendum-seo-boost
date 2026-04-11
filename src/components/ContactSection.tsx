@@ -35,15 +35,15 @@ export const ContactSection = () => {
   };
 
   const inputClasses =
-    'w-full bg-background border border-border rounded-sm px-4 py-3 text-sm font-body text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:ring-1 focus:ring-primary/50 transition-colors';
+    'w-full bg-card border border-border/50 rounded-sm px-4 py-3 text-sm font-body text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:ring-1 focus:ring-gold/50 transition-colors';
 
   return (
     <section id="contacto" className="py-24 md:py-36">
       <div className="container mx-auto px-4 max-w-2xl">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
-          <p className="text-xs tracking-[0.3em] uppercase text-primary mb-4 font-body font-medium">Información</p>
-          <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground leading-tight">
-            Dossier Técnico e Información de <span className="blue-gray-text">Lanzamiento</span>
+          <p className="text-xs tracking-[0.3em] uppercase text-gold mb-4 font-body font-medium">Información</p>
+          <h2 className="font-display text-3xl md:text-5xl font-light text-foreground leading-tight">
+            Dossier Técnico e Información de <span className="gold-text font-medium">Lanzamiento</span>
           </h2>
           <p className="font-body text-sm text-muted-foreground max-w-lg mx-auto mt-5 leading-relaxed">
             Debido a los estrictos procesos de control de calidad y a la llegada de los lotes limitados desde Berlín, nuestras moléculas están en fase de catalogación final. Deje sus datos para recibir la ficha técnica de cada protocolo y ser notificado 24h antes de la apertura del stock en España.
@@ -70,7 +70,7 @@ export const ContactSection = () => {
             </select>
           </div>
           <button type="submit" disabled={sending}
-            className="w-full bg-foreground text-background py-4 rounded-sm text-sm font-body font-semibold tracking-wider uppercase hover:bg-foreground/90 transition-colors flex items-center justify-center gap-2 disabled:opacity-60">
+            className="w-full gold-gradient text-primary-foreground py-4 rounded-sm text-sm font-body font-semibold tracking-wider uppercase hover:opacity-90 transition-opacity flex items-center justify-center gap-2 disabled:opacity-60">
             <Send className="w-4 h-4" />
             {sending ? 'Enviando...' : 'Enviar Solicitud de Información'}
           </button>
